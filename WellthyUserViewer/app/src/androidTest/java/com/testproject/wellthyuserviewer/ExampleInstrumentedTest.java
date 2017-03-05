@@ -1,4 +1,4 @@
-package com.testproject.myapplication;
+package com.testproject.wellthyuserviewer;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
