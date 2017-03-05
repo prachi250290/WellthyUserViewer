@@ -6,7 +6,7 @@ package com.testproject.wellthyuserviewer;
 
 public interface UserServiceInterface {
 
-    void fetchDataFromServer();
+    void fetchDataFromServer(UserDataListener userDataListener);
 
     void saveDataToDevice();
 }

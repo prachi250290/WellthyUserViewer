@@ -5,10 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,6 +21,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
 
     public UserListAdapter(Context context) {
         this.context = context;
+        this.userList = new ArrayList<>();
     }
 
     @Override
@@ -42,6 +42,9 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
 
     @Override
     public int getItemCount() {
+        if(userList == null) {
+            return 0;
+        }
         return userList.size();
     }
 

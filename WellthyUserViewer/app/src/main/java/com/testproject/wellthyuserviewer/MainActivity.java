@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ListView;
 
 import java.util.List;
 
@@ -27,6 +26,8 @@ public class MainActivity extends Activity implements MainViewInterface {
 
 
         userPresenter = new UserPresenter(this);
+
+        fetchUsers();
 
     }
 
