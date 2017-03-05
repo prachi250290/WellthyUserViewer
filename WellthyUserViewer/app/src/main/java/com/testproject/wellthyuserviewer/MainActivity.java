@@ -43,10 +43,9 @@ public class MainActivity extends Activity implements MainViewInterface {
 
     }
 
-
-    @Override
+    
     public void fetchUsers() {
-        userPresenter.getUsers();
+
     }
 
     @Override

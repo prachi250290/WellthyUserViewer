@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface MainViewInterface {
 
-    void fetchUsers();
-
     void refreshList(List<User> users);
 
 }
