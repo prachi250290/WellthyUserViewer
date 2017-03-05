@@ -1,4 +1,4 @@
-package com.testproject.myapplication;
+package com.testproject.wellthyuserviewer;
 
 import org.junit.Test;
 
