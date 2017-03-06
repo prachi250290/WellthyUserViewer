@@ -1,6 +1,7 @@
 package com.testproject.wellthyuserviewer;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -39,6 +40,7 @@ public class MainActivity extends Activity implements MainViewInterface {
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(userListAdapter);
 
     }
@@ -52,5 +54,10 @@ public class MainActivity extends Activity implements MainViewInterface {
     public void refreshList(List<User> userList) {
         userListAdapter.setUserList(userList);
         userListAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public Context getAppContext() {
+        return getApplicationContext();
     }
 }

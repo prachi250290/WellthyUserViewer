@@ -13,7 +13,7 @@ public class UserPresenter implements UserPresenterInterface {
 
     public UserPresenter(MainViewInterface mainView){
         this.mainView = mainView;
-        userServiceInterface = new UserService();
+        userServiceInterface = new UserService(mainView.getAppContext());
     }
 
     @Override

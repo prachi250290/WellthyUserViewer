@@ -1,5 +1,7 @@
 package com.testproject.wellthyuserviewer;
 
+import android.content.Context;
+
 import java.util.List;
 
 /**
@@ -9,5 +11,7 @@ import java.util.List;
 public interface MainViewInterface {
 
     void refreshList(List<User> users);
+
+    Context getAppContext();
 
 }

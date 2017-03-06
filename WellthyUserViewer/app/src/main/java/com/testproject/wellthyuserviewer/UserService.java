@@ -1,5 +1,9 @@
 package com.testproject.wellthyuserviewer;
 
+import android.content.Context;
+
+import com.testproject.wellthyuserviewer.database.UserInfoDataSource;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -11,6 +15,14 @@ import retrofit2.Response;
  */
 
 public class UserService implements UserServiceInterface {
+
+
+    private UserInfoDataSource userInfoDataSource;
+
+    public UserService (Context context){
+        userInfoDataSource = new UserInfoDataSource(context);
+    }
+
 
     @Override
     public void fetchDataFromServer(final UserDataListener userDataListener) {
@@ -28,7 +40,7 @@ public class UserService implements UserServiceInterface {
                     if (response.isSuccessful()) {
 
                         List<User> users = response.body();
-                        userDataListener.onSuccess(users);
+                        saveDataToDevice(users, userDataListener);
 
                     }
                 }
@@ -43,8 +55,11 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
-    public void saveDataToDevice() {
-
+    public void saveDataToDevice(List<User> userList, UserDataListener userDataListener) {
+       boolean isDataSaved = userInfoDataSource.saveAllUsers(userList);
+        if(isDataSaved) {
+            userDataListener.onSuccess(userInfoDataSource.getAllUsers());
+        }
     }
 
 
