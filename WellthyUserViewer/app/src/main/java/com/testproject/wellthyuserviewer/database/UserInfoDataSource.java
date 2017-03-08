@@ -36,7 +36,16 @@ public class UserInfoDataSource {
         dbHelper.close();
     }
 
+    public void clearDatabaseRecords() {
+        open();
+        database.execSQL("DELETE FROM " + UserSQLiteHelper.TABLE_NAME);
+        close();
+    }
+
     public boolean saveAllUsers(List<User> userList) {
+
+        clearDatabaseRecords();
+
         open();
         database.beginTransaction();
 
