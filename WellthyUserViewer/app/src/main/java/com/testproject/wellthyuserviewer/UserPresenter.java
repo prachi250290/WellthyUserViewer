@@ -10,10 +10,12 @@ public class UserPresenter implements UserPresenterInterface {
 
     MainViewInterface mainView;
     UserServiceInterface userServiceInterface;
+    UserRepositoryInterface userRepositoryInterface;
 
-    public UserPresenter(MainViewInterface mainView){
+    public UserPresenter(MainViewInterface mainView, UserServiceInterface userService){
         this.mainView = mainView;
-        userServiceInterface = new UserService(mainView.getAppContext());
+        userServiceInterface = userService;
+        userRepositoryInterface = new UserRepository(mainView.getAppContext());
     }
 
     @Override
@@ -22,7 +24,7 @@ public class UserPresenter implements UserPresenterInterface {
         userServiceInterface.fetchDataFromServer(new UserDataListener() {
             @Override
             public void onSuccess(List<User> userList) {
-                mainView.refreshList(userList);
+                userRepositoryInterface.saveDataToDevice(userList, userRepositoryListener);
             }
 
             @Override
@@ -33,4 +35,24 @@ public class UserPresenter implements UserPresenterInterface {
 
         mainView.refreshList(null);
     }
+
+    @Override
+    public void showNoUsersError() {
+        mainView.showNoUsersError();
+    }
+
+    private UserRepositoryListener userRepositoryListener = new UserRepositoryListener() {
+
+        @Override
+        public void onSuccess(List<User> userList) {
+            mainView.refreshList(userList);
+        }
+
+        @Override
+        public void onFailure(String errorMessage) {
+
+        }
+    };
+
+
 }

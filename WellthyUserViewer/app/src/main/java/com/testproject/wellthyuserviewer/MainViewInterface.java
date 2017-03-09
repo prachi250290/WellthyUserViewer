@@ -14,4 +14,6 @@ public interface MainViewInterface {
 
     Context getAppContext();
 
+    void showNoUsersError();
+
 }

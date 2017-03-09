@@ -16,13 +16,9 @@ import retrofit2.Response;
 
 public class UserService implements UserServiceInterface {
 
+    public UserService () {
 
-    private UserInfoDataSource userInfoDataSource;
-
-    public UserService (Context context){
-        userInfoDataSource = new UserInfoDataSource(context);
     }
-
 
     @Override
     public void fetchDataFromServer(final UserDataListener userDataListener) {
@@ -40,7 +36,7 @@ public class UserService implements UserServiceInterface {
                     if (response.isSuccessful()) {
 
                         List<User> users = response.body();
-                        saveDataToDevice(users, userDataListener);
+                        userDataListener.onSuccess(users);
 
                     }
                 }
@@ -52,14 +48,6 @@ public class UserService implements UserServiceInterface {
 
             }
         });
-    }
-
-    @Override
-    public void saveDataToDevice(List<User> userList, UserDataListener userDataListener) {
-       boolean isDataSaved = userInfoDataSource.saveAllUsers(userList);
-        if(isDataSaved) {
-            userDataListener.onSuccess(userInfoDataSource.getAllUsers());
-        }
     }
 
 

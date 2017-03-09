@@ -25,8 +25,7 @@ public class MainActivity extends Activity implements MainViewInterface {
 
         initializeList();
 
-
-        userPresenter = new UserPresenter(this);
+        userPresenter = new UserPresenter(this, new UserService());
 
         fetchUsers();
 
@@ -59,5 +58,10 @@ public class MainActivity extends Activity implements MainViewInterface {
     @Override
     public Context getAppContext() {
         return getApplicationContext();
+    }
+
+    @Override
+    public void showNoUsersError() {
+        Common.createAlertDialog(this, "No users found").show();
     }
 }

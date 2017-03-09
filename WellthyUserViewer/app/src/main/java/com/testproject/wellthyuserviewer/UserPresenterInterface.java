@@ -7,4 +7,7 @@ package com.testproject.wellthyuserviewer;
 public interface UserPresenterInterface {
 
     void getUsers();
+
+    void showNoUsersError();
+
 }
