@@ -1,8 +1,8 @@
-package com.testproject.wellthyuserviewer;
+package com.testproject.wellthyuserviewer.database;
 
 import android.content.Context;
 
-import com.testproject.wellthyuserviewer.database.UserInfoDataSource;
+import com.testproject.wellthyuserviewer.model.User;
 
 import java.util.List;
 

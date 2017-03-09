@@ -1,12 +1,17 @@
-package com.testproject.wellthyuserviewer;
+package com.testproject.wellthyuserviewer.webservice;
+
+import com.testproject.wellthyuserviewer.model.User;
 
 import java.io.IOException;
+import java.util.List;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.GET;
 
 /**
  * Created by prachi on 05/03/17.
@@ -42,5 +47,5 @@ public class ApiClient {
                 .build();
 
     }
-
+    
 }

@@ -1,4 +1,4 @@
-package com.testproject.wellthyuserviewer;
+package com.testproject.wellthyuserviewer.presenter;
 
 /**
  * Created by prachi on 05/03/17.

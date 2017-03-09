@@ -1,6 +1,4 @@
-package com.testproject.wellthyuserviewer;
-
-import java.util.List;
+package com.testproject.wellthyuserviewer.webservice;
 
 /**
  * Created by prachi on 05/03/17.

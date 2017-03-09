@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import com.testproject.wellthyuserviewer.User;
+import com.testproject.wellthyuserviewer.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

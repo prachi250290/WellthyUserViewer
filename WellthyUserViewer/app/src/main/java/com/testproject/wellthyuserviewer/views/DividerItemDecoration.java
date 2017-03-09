@@ -1,4 +1,4 @@
-package com.testproject.wellthyuserviewer;
+package com.testproject.wellthyuserviewer.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;

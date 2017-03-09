@@ -1,5 +1,12 @@
 package com.testproject.wellthyuserviewer;
 
+import com.testproject.wellthyuserviewer.model.User;
+import com.testproject.wellthyuserviewer.presenter.UserPresenter;
+import com.testproject.wellthyuserviewer.views.MainViewInterface;
+import com.testproject.wellthyuserviewer.webservice.UserDataListener;
+import com.testproject.wellthyuserviewer.webservice.UserService;
+import com.testproject.wellthyuserviewer.webservice.UserServiceInterface;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

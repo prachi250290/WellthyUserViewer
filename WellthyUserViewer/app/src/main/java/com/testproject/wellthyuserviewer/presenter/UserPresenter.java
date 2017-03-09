@@ -1,4 +1,12 @@
-package com.testproject.wellthyuserviewer;
+package com.testproject.wellthyuserviewer.presenter;
+
+import com.testproject.wellthyuserviewer.webservice.UserDataListener;
+import com.testproject.wellthyuserviewer.database.UserRepository;
+import com.testproject.wellthyuserviewer.database.UserRepositoryInterface;
+import com.testproject.wellthyuserviewer.database.UserRepositoryListener;
+import com.testproject.wellthyuserviewer.webservice.UserServiceInterface;
+import com.testproject.wellthyuserviewer.model.User;
+import com.testproject.wellthyuserviewer.views.MainViewInterface;
 
 import java.util.List;
 

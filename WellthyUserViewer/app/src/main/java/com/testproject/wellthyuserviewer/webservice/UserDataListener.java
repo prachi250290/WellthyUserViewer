@@ -1,4 +1,6 @@
-package com.testproject.wellthyuserviewer;
+package com.testproject.wellthyuserviewer.webservice;
+
+import com.testproject.wellthyuserviewer.model.User;
 
 import java.util.List;
 

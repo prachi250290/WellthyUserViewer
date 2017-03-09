@@ -1,11 +1,18 @@
-package com.testproject.wellthyuserviewer;
+package com.testproject.wellthyuserviewer.views;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.testproject.wellthyuserviewer.R;
+import com.testproject.wellthyuserviewer.model.User;
+import com.testproject.wellthyuserviewer.presenter.UserPresenter;
+import com.testproject.wellthyuserviewer.presenter.UserPresenterInterface;
+import com.testproject.wellthyuserviewer.webservice.UserService;
 
 import java.util.List;
 
@@ -62,6 +69,8 @@ public class MainActivity extends Activity implements MainViewInterface {
 
     @Override
     public void showNoUsersError() {
-        Common.createAlertDialog(this, "No users found").show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("No Users found");
+        builder.create().show();
     }
 }
