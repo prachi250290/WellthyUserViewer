@@ -13,7 +13,7 @@ import retrofit2.http.GET;
 
 public interface ApiInterface {
 
-        @GET("/users")
-        Call<List<User>> getUsers();
+    @GET("/users")
+    Call<List<User>> getUsers();
 
 }

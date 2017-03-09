@@ -1,12 +1,12 @@
 package com.testproject.wellthyuserviewer.presenter;
 
-import com.testproject.wellthyuserviewer.webservice.UserDataListener;
 import com.testproject.wellthyuserviewer.database.UserRepository;
 import com.testproject.wellthyuserviewer.database.UserRepositoryInterface;
 import com.testproject.wellthyuserviewer.database.UserRepositoryListener;
-import com.testproject.wellthyuserviewer.webservice.UserServiceInterface;
 import com.testproject.wellthyuserviewer.model.User;
 import com.testproject.wellthyuserviewer.views.MainViewInterface;
+import com.testproject.wellthyuserviewer.webservice.UserDataListener;
+import com.testproject.wellthyuserviewer.webservice.UserServiceInterface;
 
 import java.util.List;
 
@@ -19,8 +19,20 @@ public class UserPresenter implements UserPresenterInterface {
     MainViewInterface mainView;
     UserServiceInterface userServiceInterface;
     UserRepositoryInterface userRepositoryInterface;
+    private UserRepositoryListener userRepositoryListener = new UserRepositoryListener() {
 
-    public UserPresenter(MainViewInterface mainView, UserServiceInterface userService){
+        @Override
+        public void onSuccess(List<User> userList) {
+            mainView.refreshList(userList);
+        }
+
+        @Override
+        public void onFailure(String errorMessage) {
+
+        }
+    };
+
+    public UserPresenter(MainViewInterface mainView, UserServiceInterface userService) {
         this.mainView = mainView;
         userServiceInterface = userService;
         userRepositoryInterface = new UserRepository(mainView.getAppContext());
@@ -48,19 +60,6 @@ public class UserPresenter implements UserPresenterInterface {
     public void showNoUsersError() {
         mainView.showNoUsersError();
     }
-
-    private UserRepositoryListener userRepositoryListener = new UserRepositoryListener() {
-
-        @Override
-        public void onSuccess(List<User> userList) {
-            mainView.refreshList(userList);
-        }
-
-        @Override
-        public void onFailure(String errorMessage) {
-
-        }
-    };
 
 
 }

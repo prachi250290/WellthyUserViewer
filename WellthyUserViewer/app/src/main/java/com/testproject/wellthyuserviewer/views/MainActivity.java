@@ -20,7 +20,7 @@ public class MainActivity extends Activity implements MainViewInterface {
 
     private RecyclerView recyclerView;
     private UserListAdapter userListAdapter;
-    private LinearLayoutManager mLayoutManager;;
+    private LinearLayoutManager mLayoutManager;
 
     private UserPresenterInterface userPresenter;
 
@@ -51,7 +51,7 @@ public class MainActivity extends Activity implements MainViewInterface {
 
     }
 
-    
+
     public void fetchUsers() {
         userPresenter.getUsers();
     }

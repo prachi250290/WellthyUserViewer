@@ -14,7 +14,7 @@ import retrofit2.Response;
 
 public class UserService implements UserServiceInterface {
 
-    public UserService () {
+    public UserService() {
 
     }
 
@@ -47,7 +47,6 @@ public class UserService implements UserServiceInterface {
             }
         });
     }
-
 
 
 }

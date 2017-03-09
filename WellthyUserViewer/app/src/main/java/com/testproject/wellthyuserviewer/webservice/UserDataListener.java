@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface UserDataListener {
 
-        void onSuccess(List<User> userList);
+    void onSuccess(List<User> userList);
 
-        void onFailure(String errorMessage);
+    void onFailure(String errorMessage);
 
 }

@@ -1,9 +1,7 @@
 package com.testproject.wellthyuserviewer.views;
 
 import android.content.Context;
-
 import com.testproject.wellthyuserviewer.model.User;
-
 import java.util.List;
 
 /**
